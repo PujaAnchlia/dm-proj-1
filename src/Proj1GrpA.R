@@ -48,28 +48,27 @@ print(corr_mat)
 require("lattice")                               # Install the "lattice" package
 
 # Classification scatter plots
-#draw_Classification_Scatter(bnd_frame,"Variance","Skewness")
-#draw_Classification_Scatter(bnd_frame,"Variance","Kurtosis")
-#draw_Classification_Scatter(bnd_frame,"Variance","Entropy")
-#draw_Classification_Scatter(bnd_frame,"Skewness","Kurtosis")
-#draw_Classification_Scatter(bnd_frame,"Skewness","Entropy")
-#draw_Classification_Scatter(bnd_frame,"Kurtosis","Entropy")
+draw_Classification_Scatter(bnd_frame,"Variance","Skewness")
+draw_Classification_Scatter(bnd_frame,"Variance","Kurtosis")
+draw_Classification_Scatter(bnd_frame,"Variance","Entropy")
+draw_Classification_Scatter(bnd_frame,"Skewness","Kurtosis")
+draw_Classification_Scatter(bnd_frame,"Skewness","Entropy")
+draw_Classification_Scatter(bnd_frame,"Kurtosis","Entropy")
 
 #Scatter plots
-#draw_Scatter(bnd_frame,"Variance","Skewness")    
-#draw_Scatter(bnd_frame,"Kurtosis","Entropy")    
+draw_Scatter(bnd_frame,"Variance","Skewness")    
+draw_Scatter(bnd_frame,"Kurtosis","Entropy")    
 
 # Histogram
-#draw_Histogram(bnd_frame,"Kurtosis")     
+draw_Histogram(bnd_frame,"Kurtosis")     
 
 # Box plots
-#draw_Box(bnd_frame,"Skewness")                  
-#draw_Box(bnd_frame,"Kurtosis")                 
+draw_Box(bnd_frame,"Skewness")                  
+draw_Box(bnd_frame,"Kurtosis")                 
 
 # Star plots
-#draw_Star(bnd_frame,0)
-#draw_Star(bnd_frame,1)
-draw_Star(0)
-draw_Star(1)
+draw_Star(bnd_frame,0)
+draw_Star(bnd_frame,1)
+
 
 }

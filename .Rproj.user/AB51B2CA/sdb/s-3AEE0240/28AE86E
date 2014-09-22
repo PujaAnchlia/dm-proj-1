@@ -1,12 +1,12 @@
 {
-    "contents" : "#draw_Star <- function(bnd_frame,label)\ndraw_Star <- function(label)\n{\n  banknoteData <- read.csv(\"data/data_banknote_authentication.txt\",header=F)\n  #print(label)\n  #bnd_class_spl <- bnd_frame[Class == label,]           # selecting instances of input class label only\n  \n  counter <- 0\n  output  <- matrix(nrow=20, ncol=4)\n  for (i in 1:nrow(banknoteData)) {\n  #for (i in 1:20) {\n      #print(bnd_frame[i,])\n    if (banknoteData[i, \"V5\"] == label) {\n      output[counter + 1, 1] <- banknoteData[i,1]\n      output[counter + 1, 2] <- banknoteData[i,2]\n      output[counter + 1, 3] <- banknoteData[i,3]\n      output[counter + 1, 4] <- banknoteData[i,4]\n      #output[counter, 1] <- bnd_class_spl[i,1]\n      #output[counter, 2] <- bnd_class_spl[i,2]\n      #output[counter, 3] <- bnd_class_spl[i,3]\n      #output[counter, 4] <- bnd_class_spl[i,4]\n      \n      counter = counter + 1\n    }\n    if (counter == 20)\n      break\n  }\n  \n  stars(output)\n}",
+    "contents" : "draw_Star <- function(bnd_frame,label)\n#draw_Star <- function(label)\n{\n  #banknoteData <- read.csv(\"data/data_banknote_authentication.txt\",header=F)\n  bnd_class_spl <- bnd_frame[Class == label,]           # selecting instances of input class label only\n  \n  counter <- 1\n  output  <- matrix(nrow=20, ncol=4)\n  #for (i in 1:nrow(banknoteData)) {\n  for (i in 1:20) {\n      \n    #if (banknoteData[i, \"V5\"] == label) {\n     # output[counter + 1, 1] <- banknoteData[i,1]\n    #  output[counter + 1, 2] <- banknoteData[i,2]\n      #output[counter + 1, 3] <- banknoteData[i,3]\n      #output[counter + 1, 4] <- banknoteData[i,4]\n      output[counter, 1] <- bnd_class_spl[i,1]\n      output[counter, 2] <- bnd_class_spl[i,2]\n      output[counter, 3] <- bnd_class_spl[i,3]\n      output[counter, 4] <- bnd_class_spl[i,4]\n      \n      counter = counter + 1\n    #}\n    #if (counter == 20)\n    #  break\n  }\n  \n  stars(output)\n}",
     "created" : 1411344833330.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "919178080",
+    "hash" : "3552600108",
     "id" : "28AE86E",
-    "lastKnownWriteTime" : 1411349458,
+    "lastKnownWriteTime" : 1411399580,
     "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Star.R",
     "project_path" : "src/draw_Star.R",
     "properties" : {
