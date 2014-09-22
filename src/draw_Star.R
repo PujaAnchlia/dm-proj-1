@@ -25,5 +25,5 @@ draw_Star <- function(bnd_frame,label)
     #  break
   }
   
-  stars(output)
+  stars(output,main=paste("Star Plot - Class", label))
 }

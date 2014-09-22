@@ -70,5 +70,7 @@ draw_Box(bnd_frame,"Kurtosis")
 draw_Star(bnd_frame,0)
 draw_Star(bnd_frame,1)
 
+# Linear model
+linear(bnd_frame)
 
 }
