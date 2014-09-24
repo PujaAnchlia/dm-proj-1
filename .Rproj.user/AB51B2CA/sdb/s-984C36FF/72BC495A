@@ -1,0 +1,16 @@
+{
+    "contents" : "draw_Box <- function(bnd_frame,attr_name)\n{\n  # Convert the numerical \"class\" attribute to categorical.\n  f_class <- factor(Class)\n  Class  <- f_class\n  \n  op <- par(oma=c(0,0,3,0),mfcol=c(1,2))\n  \n  #print (summary(bnd_frame[,attr_name]))\n  boxplot(bnd_frame[,attr_name],main=\"Whole dataset\",\n          col=\"darkseagreen1\",cex.main=1.25,col.main=\"violetred1\")\n  \n  boxplot(bnd_frame[,attr_name]~Class,main=\"Class Specific\",\n          col=\"darkseagreen1\",cex.main=1.25,col.main=\"violetred1\",hoizontal=FALSE)\n  \n  #bnd_frame_class0 <- bnd_frame[Class == 0,]           # Class 0 data only\n  \n  #bnd_frame_class1 <- bnd_frame[Class == 1,]           # Class 1 data only\n  \n  #boxplot(bnd_frame_class0[,attr_name],main=\"Class 0\",\n  #        col=\"thistle2\",cex.main=1.25,col.main=\"violetred1\")\n  \n  #boxplot(bnd_frame_class1[,attr_name],main=\"Class 1\",\n  #        col=\"wheat\",cex.main=1.25,col.main=\"violetred1\")\n  \n  par(op)\n  mtext(paste(\"Box Plot of \",attr_name),line=2,font=2,cex=1,col=\"blue\")\n  \n    \n}",
+    "created" : 1411249003700.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3650487477",
+    "id" : "72BC495A",
+    "lastKnownWriteTime" : 1411590201,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Box.R",
+    "project_path" : "src/draw_Box.R",
+    "properties" : {
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

@@ -15,8 +15,5 @@ linear <- function(bnd_frame)
                    norm_bnd_final$Kur2 + norm_bnd_final$Ent2)
 
   print(summary(lm_model))
-  
-  #par(mfrow=c(2,2))
-  #plot(lm_model)
-  #par(mfrow=c(1,1))
+
 }

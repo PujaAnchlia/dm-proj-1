@@ -1,0 +1,16 @@
+{
+    "contents" : "draw_Star <- function(bnd_frame,label)\n{\n  \n  # z-score the data set and shift the means of each of the first four attributes\n  # to avoid negative numbers or zeros.\n  bnd_z   <- scale(bnd_frame[1:4],center=TRUE,scale=TRUE)\n  \n  bnd_z_t <- data.frame(scale(bnd_z,center=c(min(bnd_z[,1]),min(bnd_z[,2]),\n                               min(bnd_z[,3]),min(bnd_z[,4])),scale=FALSE))\n  \n  # Add back the Class attribute\n  bnd_z_t <- cbind(bnd_z_t,Class1=bnd_frame[,5])\n    \n  # selecting instances of input class label only\n  bnd_z_class <- bnd_z_t[bnd_z_t$Class1 == label,]\n  \n  print (bnd_z_class[1:20,])\n  \n  counter <- 1\n  output  <- matrix(nrow=20, ncol=4)\n  \n  for (i in 1:20) {\n\n      output[counter, 1] <- bnd_z_class[i,1]\n      output[counter, 2] <- bnd_z_class[i,2]\n      output[counter, 3] <- bnd_z_class[i,3]\n      output[counter, 4] <- bnd_z_class[i,4]\n      \n      counter = counter + 1\n\n  }\n  \n  stars(output,main=paste(\"Star Plot - Class\", label))\n  \n}",
+    "created" : 1411344833330.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3095053150",
+    "id" : "28AE86E",
+    "lastKnownWriteTime" : 1411590086,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Star.R",
+    "project_path" : "src/draw_Star.R",
+    "properties" : {
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

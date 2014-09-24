@@ -1,0 +1,16 @@
+{
+    "contents" : "draw_Histogram <- function(bnd_frame,attr_name){\n    \n  hist(bnd_frame[,attr_name], ylim=range(seq(0,100,by=5)), breaks=seq(-10, 20, by=.5),\n       col=\"sienna1\", xlab=attr_name, main=paste(\"Histogram - \",attr_name))\n}",
+    "created" : 1411569958970.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1336565370",
+    "id" : "321498DB",
+    "lastKnownWriteTime" : 1411562454,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Histogram.R",
+    "project_path" : "src/draw_Histogram.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
