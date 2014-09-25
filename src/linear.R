@@ -1,5 +1,7 @@
 linear <- function(bnd_frame)
 {
+  # This function fits a linear model to predict the class using other 4 attributes.
+  
   # Normalize the bank note dataset, excluding the class attribute
   sbnd <- data.frame(Var1=bnd_frame[,1],Skew1=bnd_frame[,2],
                      Kur1=bnd_frame[,3],Ent1=bnd_frame[,4])

@@ -1,8 +1,9 @@
 draw_Star <- function(bnd_frame,label)
 {
+  # This function creates star plots.
   
   # z-score the data set and shift the means of each of the first four attributes
-  # to avoid negative numbers or zeros.
+  # to avoid negative numbers.
   bnd_z   <- scale(bnd_frame[1:4],center=TRUE,scale=TRUE)
   
   bnd_z_t <- data.frame(scale(bnd_z,center=c(min(bnd_z[,1]),min(bnd_z[,2]),
@@ -13,8 +14,6 @@ draw_Star <- function(bnd_frame,label)
     
   # selecting instances of input class label only
   bnd_z_class <- bnd_z_t[bnd_z_t$Class1 == label,]
-  
-  print (bnd_z_class[1:20,])
   
   counter <- 1
   output  <- matrix(nrow=20, ncol=4)
@@ -32,6 +31,7 @@ draw_Star <- function(bnd_frame,label)
     x = x - 40
     y = y + 10
   }
+  
   counter <- 1
   for (i in 1:20) {
       output[counter, 1] <- bnd_z_class[i,1]
@@ -41,7 +41,7 @@ draw_Star <- function(bnd_frame,label)
       labels[i] <- counter
       counter = counter + 1
   }
-  print(output)
+  
   stars(output,main=paste("Star Plot - Class", label), scale=FALSE, locations=locations, labels=labels)
   
 }

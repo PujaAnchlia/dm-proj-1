@@ -1,0 +1,16 @@
+{
+    "contents" : "linear <- function(bnd_frame)\n{\n  # This function fits a linear model to predict the class using other 4 attributes.\n  \n  # Normalize the bank note dataset, excluding the class attribute\n  sbnd <- data.frame(Var1=bnd_frame[,1],Skew1=bnd_frame[,2],\n                     Kur1=bnd_frame[,3],Ent1=bnd_frame[,4])\n  normal_bnd <- scale(sbnd)\n  \n  # Add back the class attribute\n  norm_bnd_final <- data.frame(Var2=normal_bnd[,1],Skew2=normal_bnd[,2],\n                  Kur2=normal_bnd[,3],Ent2=normal_bnd[,4],Class2=bnd_frame[,5])\n  \n  # Fit a linear model, to predict class attribute using the other 4 attributes\n  # as the dependent variables.\n  lm_model <- lm(norm_bnd_final$Class2 ~ norm_bnd_final$Var2 + norm_bnd_final$Skew2 + \n                   norm_bnd_final$Kur2 + norm_bnd_final$Ent2)\n\n  print(summary(lm_model))\n\n}\n",
+    "created" : 1411608273786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1430670868",
+    "id" : "C67AAE0B",
+    "lastKnownWriteTime" : 1411608483,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/linear.R",
+    "project_path" : "src/linear.R",
+    "properties" : {
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

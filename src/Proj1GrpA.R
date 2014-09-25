@@ -46,9 +46,9 @@ corr_mat <- cor(bnd_frame[c(1,2,3,4)])
 print(corr_mat)
 
 # mode
-#d_Kur <- density(Kurtosis)
-#mode_Kur <- d_Kur$x[which.max(d_Kur$y)]
-#cat("Mode: ",mode_Kur)
+d_Kur <- density(Kurtosis)
+mode_Kur <- d_Kur$x[which.max(d_Kur$y)]
+cat("Mode: ",mode_Kur)
 
 require("lattice")                               # Install the "lattice" package
 
@@ -79,6 +79,6 @@ draw_Star(bnd_frame,1)
 linear(bnd_frame)
 
 # Decision Tree
-#draw_Decision_Tree(bnd_frame)
+tree(bnd_frame)
 
 }

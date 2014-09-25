@@ -1,0 +1,16 @@
+{
+    "contents" : "draw_Box <- function(bnd_frame,attr_name)\n{\n  # This function creates box plots\n  \n  # Convert the numerical \"class\" attribute to categorical.\n  f_class <- factor(Class)\n  Class  <- f_class\n  \n  op <- par(oma=c(0,0,2,0),mfcol=c(1,2))  \n   \n  boxplot(bnd_frame[,attr_name],main=\"Whole dataset\",\n          col=\"darkseagreen1\",cex.main=1.25,col.main=\"violetred1\")\n  \n  boxplot(bnd_frame[,attr_name]~Class,main=\"Class Specific\",\n          col=c(\"thistle2\",\"wheat\")[Class],cex.main=1.25,col.main=\"violetred1\",hoizontal=FALSE)\n  \n  par(op)\n  mtext(paste(\"Box Plot of \",attr_name),line=2,font=2,cex=1,col=\"blue\")\n  \n    \n}",
+    "created" : 1411607875627.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2808917163",
+    "id" : "4CF1D884",
+    "lastKnownWriteTime" : 1411608066,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Box.R",
+    "project_path" : "src/draw_Box.R",
+    "properties" : {
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

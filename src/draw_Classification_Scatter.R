@@ -13,6 +13,7 @@ draw_Classification_Scatter <- function(bnd_frame,attr1_name,attr2_name) {
        main=paste("Classification scatter plot - ",attr1_name,", ",attr2_name),
        xlab = attr1_name, ylab = attr2_name,cex=0.5)
   
-  legend("bottomright",inset=c(-0.175,0),c("Class 0","Class 1"),pch=c(1,4),col=c("red","green"),cex=.75)
+  legend("bottomright",inset=c(-0.175,0),c("Class 0","Class 1"),pch=c(1,4),
+         col=c("red","green"),cex=.75)
     
 }

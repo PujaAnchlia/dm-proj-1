@@ -1,0 +1,17 @@
+{
+    "contents" : "\ndraw_Scatter <- function(bnd_frame,attr1_name,attr2_name) {\n# This function creates scatter plots.\n  \n  plot(bnd_frame[,attr2_name]~bnd_frame[,attr1_name],pch=1,col=\"blue\",\n       main=paste(\"Scatter plot - \",attr1_name,\", \",attr2_name),\n       xlab = attr1_name, ylab = attr2_name,cex=0.5)\n    \n}",
+    "created" : 1411607786063.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1891186078",
+    "id" : "B9A2FD4A",
+    "lastKnownWriteTime" : 1411607815,
+    "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Scatter.R",
+    "project_path" : "src/draw_Scatter.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
