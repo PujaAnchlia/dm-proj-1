@@ -5,6 +5,7 @@ tree <- function(bnd_frame)
   library(rpart)
   library(rpart.plot)
   library(cvTools)
+  
   # Normalize the bank note dataset, excluding the class attribute
   sbnd <- data.frame(Var1=bnd_frame[,1],Skew1=bnd_frame[,2],
                      Kur1=bnd_frame[,3],Ent1=bnd_frame[,4])
@@ -23,6 +24,6 @@ tree <- function(bnd_frame)
   
   prp(model)
   
-  summary(cvFit(rpart, Class ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,
+  summary(cvFit(rpart, Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,
         K=10))
 }
