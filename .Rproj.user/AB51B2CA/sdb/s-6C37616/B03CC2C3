@@ -1,12 +1,12 @@
 {
-    "contents" : "tree <- function(bnd_frame)\n{\n  # This function creates a decision tree.\n  \n  library(rpart)\n  library(rpart.plot)\n  \n  # Normalize the bank note dataset, excluding the class attribute\n  sbnd <- data.frame(Var1=bnd_frame[,1],Skew1=bnd_frame[,2],\n                     Kur1=bnd_frame[,3],Ent1=bnd_frame[,4])\n  normal_bnd <- scale(sbnd)\n  \n  # Add back the class attribute\n  norm_bnd_final <- data.frame(NormalVariance=normal_bnd[,1],NormalSkewness=normal_bnd[,2],\n                               NormalKurtosis=normal_bnd[,3],NormalEntropy=normal_bnd[,4],Class1=bnd_frame[,5])\n  attach(norm_bnd_final)\n  on.exit(detach(norm_bnd_final),add = TRUE)\n  \n  # Fit a tree model, to predict class attribute using the other 4 attributes\n  # as the dependent variables.\n  model <- rpart(Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,method=\"class\",\n                   control=rpart.control(cp=0.03, maxdepth=4))\n  \n  prp(model)\n}\n",
+    "contents" : "tree <- function(bnd_frame)\n{\n  # This function creates a decision tree.\n  \n  library(rpart)\n  library(rpart.plot)\n  library(cvTools)\n  # Normalize the bank note dataset, excluding the class attribute\n  sbnd <- data.frame(Var1=bnd_frame[,1],Skew1=bnd_frame[,2],\n                     Kur1=bnd_frame[,3],Ent1=bnd_frame[,4])\n  normal_bnd <- scale(sbnd)\n  \n  # Add back the class attribute\n  norm_bnd_final <- data.frame(NormalVariance=normal_bnd[,1],NormalSkewness=normal_bnd[,2],\n                               NormalKurtosis=normal_bnd[,3],NormalEntropy=normal_bnd[,4],Class1=bnd_frame[,5])\n  attach(norm_bnd_final)\n  on.exit(detach(norm_bnd_final),add = TRUE)\n  \n  # Fit a tree model, to predict class attribute using the other 4 attributes\n  # as the dependent variables.\n  model <- rpart(Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,method=\"class\",\n                   control=rpart.control(cp=0.03, maxdepth=4))\n  \n  prp(model)\n  \n  summary(cvFit(rpart, Class ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,\n        K=10))\n}\n",
     "created" : 1411608371661.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1495914409",
+    "hash" : "2265405761",
     "id" : "B03CC2C3",
-    "lastKnownWriteTime" : 1411608498,
+    "lastKnownWriteTime" : 1411608859,
     "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/tree.R",
     "project_path" : "src/tree.R",
     "properties" : {
