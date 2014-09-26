@@ -22,7 +22,8 @@ tree <- function(bnd_frame)
   model <- rpart(Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,method="class",
                    control=rpart.control(cp=0.02,maxdepth=3))
   
-  prp(model, type=0, extra=2)
+  prp(model, type=0, extra=2, main = "Decision Tree for Bank Note Data",under=TRUE,
+      varlen=0,box.col="thistle1",border.col="blue",under.col="blue",col.main="violetred1")
   summary(model)
   
   set.seed(6)
