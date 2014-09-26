@@ -1,12 +1,12 @@
 {
-    "contents" : "draw_Histogram <- function(bnd_frame,attr_name){\n    \n  hist(bnd_frame[,attr_name], ylim=range(seq(0,120,by=5)), breaks=seq(-10, 20, by=.5),\n       col=\"sienna1\", xlab=attr_name, main=paste(\"Histogram - \",attr_name))\n  #hist(bnd_frame[,attr_name], ylim=range(seq(0,100,by=5)),breaks=\"FD\",\n   # col=\"sienna1\", xlab=attr_name, main=paste(\"Histogram - \",attr_name))\n}",
+    "contents" : "draw_Histogram <- function(bnd_frame,attr_name){\n    \n  hist(bnd_frame[,attr_name], ylim=range(seq(0,120,by=5)), breaks=seq(-10, 20, by=.5),\n       col=\"sienna1\", xlab=attr_name, main=paste(\"Histogram - \",attr_name))\n \n  # Density Curve  \n  d_attr <- density(bnd_frame[,attr_name])\n  plot(d_attr,main=paste(\"Density curve of \",attr_name))\n}",
     "created" : 1411607830368.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3925389746",
+    "hash" : "370095503",
     "id" : "F0868099",
-    "lastKnownWriteTime" : 1411670564,
+    "lastKnownWriteTime" : 1411707028,
     "path" : "C:/Users/PujaAnchlia/dm-proj-1/src/draw_Histogram.R",
     "project_path" : "src/draw_Histogram.R",
     "properties" : {

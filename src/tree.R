@@ -20,11 +20,12 @@ tree <- function(bnd_frame)
   # Fit a tree model, to predict class attribute using the other 4 attributes
   # as the dependent variables.
   model <- rpart(Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,method="class",
-                   control=rpart.control(cp=0.03))
+                   control=rpart.control(cp=0.02,maxdepth=3))
   
   prp(model, type=0, extra=2)
   summary(model)
   
+  set.seed(6)
   cvFit(rpart, Class1 ~ NormalVariance + NormalSkewness + NormalKurtosis + NormalEntropy,
         K=10)
 }
